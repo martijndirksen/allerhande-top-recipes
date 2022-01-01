@@ -1,8 +1,11 @@
+import { determineCourse } from './input/filter-questionnaire.js';
 import { fetchRecipes } from './api/client.js';
 import { writeRecipesToTextFile } from './output/text.js';
 
 (async function () {
-  const recipes = await fetchRecipes();
+  const course = await determineCourse();
+
+  const recipes = await fetchRecipes(course);
 
   console.log(`Fetched ${recipes.length} recipes`);
 
