@@ -58,11 +58,6 @@ query recipeSearch($query: RecipeSearchParams!) {
 }
 
 fragment recipeSearch on RecipeSearchResult {
-  correctedSearchTerm
-  filters {
-    ...recipeSearchFilterGroup
-    __typename
-  }
   page {
     total
     __typename
@@ -71,25 +66,6 @@ fragment recipeSearch on RecipeSearchResult {
     ...recipeSummary
     __typename
   }
-  __typename
-}
-
-fragment recipeSearchFilterGroup on RecipeSearchResultFilterGroup {
-  label
-  name
-  filters {
-    ...recipeSearchFilter
-    __typename
-  }
-  __typename
-}
-
-fragment recipeSearchFilter on RecipeSearchResultFilter {
-  count
-  group
-  label
-  name
-  selected
   __typename
 }
 

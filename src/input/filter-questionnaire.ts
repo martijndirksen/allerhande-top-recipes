@@ -14,6 +14,7 @@ export async function determineCourse(): Promise<Course> {
   return new Promise((resolve, _) => {
     rl.question('Your selection: ', (answer) => {
       resolve(Course[(+answer - 1) as unknown as keyof typeof Course]);
+      rl.close();
     });
   });
 }

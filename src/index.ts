@@ -5,6 +5,8 @@ import { writeRecipesToTextFile } from './output/text.js';
 (async function () {
   const course = await determineCourse();
 
+  console.log('Fetching recipes, this might take a while...');
+
   const recipes = await fetchRecipes(course);
 
   console.log(`Fetched ${recipes.length} recipes`);
