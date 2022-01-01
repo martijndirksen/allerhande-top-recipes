@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "include": ["src/index.ts", "tests/**/*"],
+  "compilerOptions": {
+    "lib": ["es2021"],
+    "module": "nodenext",
+    "target": "es2021",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "dist"
+  },
+  "watchOptions": {
+    "excludeDirectories": ["**/node_modules", "dist/*"]
+  }
+}
